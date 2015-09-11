@@ -1,0 +1,16 @@
+<div>
+  <p>
+    <strong>Name:</strong>
+    <%= @album.name %>
+  </p>
+</div>
+
+<h2>Photos</h2>
+<hr/>
+<%= render @album.photos %>
+
+
+<%= render 'photos/form' %>
+
+
+<%= link_to "Back" , albums_path %>

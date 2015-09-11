@@ -1,0 +1,6 @@
+<% @photos.each do |f| %>
+    <%= image_tag f.image_url.to_s %>
+    Tags: <%= raw f.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
+<% end %>
+
+<p><%= link_to "Back" , albums_path %></p>
