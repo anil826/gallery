@@ -1,18 +1,18 @@
 <h1>Albums</h1>
 <hr/>
-
+<div class="container-fluid">
+  <div class="row">
   <% @album.each do |album| %>
- <div>
-        <strong> Name : <%= album.name %></strong>
-        <%= link_to 'Show', album_path(album) %>
-        <%= link_to 'Edit', edit_album_path(album) %>
+        <div class="col-md-4 col-lg-offset-4"><strong>Name: <%= album.name %></strong></div>
+       <div class="col-md-4"><%= link_to 'Show', album_path(album), class: "btn btn-primary btn-sm" %>
+        <%= link_to 'Edit', edit_album_path(album),  class: "btn btn-primary btn-sm" %>
         <%= link_to 'Destroy', album_path(album),
                         method: :delete,
-                        data: { confirm: 'Are you sure?' } %>
-
- </div>
+                        data: { confirm: 'Are you sure?' },  class: "btn btn-primary btn-sm" %>
+       </div>
     <br/>
   <% end %>
+  </div>
+</div>
 
-
-<%= link_to 'New album', new_album_path %>
+<%= link_to 'New album', new_album_path, class: "btn btn-primary btn-sm" %>
