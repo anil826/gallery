@@ -13,7 +13,7 @@ class PhotosController < ApplicationController
   def create
     @album = Album.find(params[:album_id])
     @photo = @album.photos.create(photos_params)
-    redirect_to albums_path(@album)
+    redirect_to albums_path
   end
 
   private
