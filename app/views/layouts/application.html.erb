@@ -9,16 +9,14 @@
 <body>
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
-
-<div>
-  <% if user_signed_in?%>
-    <span style="float: right">
-     <%= link_to "Sing Out", destroy_user_session_path, :method => :delete %>
-    </span>
-  <% end %>
-</div>
-
+<%= render 'layouts/header' %>
 <%= yield %>
+<div id="footer">
+  <div class="container">
+    <p>&nbsp;</p>
+    <p class="lead">This Bootstrap layout was made @<a href="">Enbake</a></p>
+  </div>
+</div>
 
 </body>
 </html>
