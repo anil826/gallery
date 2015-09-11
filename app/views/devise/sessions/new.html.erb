@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="panel panel-login">
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col-xs-6">
+              <%= link_to "Login", new_session_path(resource_name),id: "login-form-link" %>
+            </div>
+            <div class="col-xs-6">
+              <a href="#" id="register-form-link">Register</a>
+            </div>
+          </div>
+          <hr>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-lg-12">
+              <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), :style => "display: block;") do |f| %>
+                  <div class="form-group">
+                    <%= f.input :email, required: false, autofocus: true, :id => "form", placeholder: "username" %>
+                  </div>
+                  <div class="form-group">
+                    <%= f.input :password, required: false, id: "form", placeholder: "Password" %>
+                  </div>
+                  <div class="form-group text-center">
+                    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-sm-6 col-sm-offset-3">
+                        <%= f.button :submit, "Log In" ,class: "form-control btn btn-login btn-success" , id: "login-submit" %>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <div class="text-center">
+                          <%= render "devise/shared/links" %>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              <% end %>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
