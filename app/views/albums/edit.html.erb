@@ -1,24 +1,32 @@
 <%#= render 'albums/form'%>
-<h1>Albums</h1>
-<%= form_for(@album) do |f| %>
-    <% if @album.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@album.errors.count, "error") %> prohibited this album from being saved:</h2>
-
-          <ul>
-            <% @album.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="col-md-8 col-lg-offset-4">
+        <h1>Albums</h1>
+        <%= form_for(@album) do |f| %>
+            <% if @album.errors.any? %>
+                <div id="error_explanation">
+                  <h2><%= pluralize(@album.errors.count, "error") %> prohibited this album from being saved:</h2>
+                  <ul>
+                    <% @album.errors.full_messages.each do |message| %>
+                        <li><%= message %></li>
+                    <% end %>
+                  </ul>
+                </div>
             <% end %>
-          </ul>
+            <div class="field">
+              <%= f.label :name %><br>
+              <%= f.text_field :name %>
+            </div>
+            <div class="actions">
+              <%= f.submit class: "btn btn-primary btn-sm" %>
+            </div>
+        <% end %>
+        <div class="pull-right">
+          <%= link_to "Back" , albums_path, class: "btn btn-primary btn-sm"  %>
         </div>
-    <% end %>
-
-    <div class="field">
-      <%= f.label :name %><br>
-      <%= f.text_field :name %>
+      </div>
     </div>
-    <div class="actions">
-      <%= f.submit %>
-    </div>
-<% end %>
-<%= link_to "Back" , albums_path %>
+  </div>
+</div>

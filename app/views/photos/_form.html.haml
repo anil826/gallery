@@ -1,0 +1,10 @@
+.container
+  .row
+    .col-md-9.col-md-offset-3
+    %h2 Add Photos
+    = form_for([@album, @album.photos.build]) do |f|
+      = f.file_field :image , class: "btn btn-default btn-file"
+      = f.label :tag_list, "Tags (separated by commas)"
+      .break
+      = f.text_field :tag_list
+      = f.submit "Upload", class: "btn btn-primary btn-sm"

@@ -57,3 +57,16 @@ body {
     height: 80px;
     background-color: #f5f5f5;
 }
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+#photo_image {
+    background-color: #fff;
+    background-image: none;
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+}

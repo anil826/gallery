@@ -1,0 +1,8 @@
+.container
+  .row
+    .col-md-4
+      %div
+        = image_tag photo.image_url.to_s
+      %h4
+        Tags:
+        \#{raw photo.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')}

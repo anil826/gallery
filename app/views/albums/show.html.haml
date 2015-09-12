@@ -1,0 +1,14 @@
+%div
+%p
+%strong Name:
+= @album.name
+%h2 Photos
+%hr/
+.row
+  .col-md-12
+    .col-md-6
+      = render @album.photos
+    .col-md-5
+      = render 'photos/form'
+    .col-md-1
+      = link_to "Back" , albums_path ,class: "btn btn-primary btn-sm"
