@@ -6,11 +6,8 @@ Rails.application.routes.draw do
     resources :photos
   end
 
-
   root 'home#index'
-
-
-
+  get 'data', to: 'home#get_data', as: :data
   get 'tags/:tag', to: 'photos#index', as: :tag
 
 
